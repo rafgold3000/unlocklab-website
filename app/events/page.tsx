@@ -120,7 +120,7 @@ export default function Events() {
             >
               <div className="rounded-xl overflow-hidden border border-gray-800 bg-background">
                 <iframe
-                  src="https://lu.ma/embed/event/evt-00wvf46f"
+                  src="https://lu.ma/embed/event/00wvf46f"
                   width="100%"
                   height="600"
                   frameBorder="0"
