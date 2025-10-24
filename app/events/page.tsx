@@ -7,64 +7,30 @@ import Card from "@/components/Card";
 import Button from "@/components/Button";
 
 export default function Events() {
-  const upcomingEvents = [
+  const offerings = [
     {
-      title: "Introduction to Machine Learning",
-      date: "November 5, 2025",
-      time: "6:00 PM - 8:00 PM EST",
-      type: "Workshop",
-      description: "Learn the fundamentals of machine learning and build your first ML model.",
-      spots: "15 spots left",
+      title: "Live workshops",
+      description: "learn tools, techniques, and workflows",
     },
     {
-      title: "Deep Dive: Neural Networks",
-      date: "November 12, 2025",
-      time: "7:00 PM - 9:00 PM EST",
-      type: "Technical Session",
-      description: "Explore the architecture and mathematics behind neural networks.",
-      spots: "20 spots left",
+      title: "Skill sprints",
+      description: "focused deep dives into a single capability",
     },
     {
-      title: "AI Ethics Panel Discussion",
-      date: "November 18, 2025",
-      time: "5:00 PM - 7:00 PM EST",
-      type: "Panel",
-      description: "Join industry experts discussing the ethical implications of AI.",
-      spots: "50 spots left",
+      title: "Community sessions",
+      description: "peer learning, feedback, and collaboration",
     },
     {
-      title: "Hackathon: Build with AI",
-      date: "November 25-26, 2025",
-      time: "All Day",
-      type: "Hackathon",
-      description: "48-hour hackathon to build innovative AI applications. Prizes included!",
-      spots: "30 spots left",
+      title: "Guest builders",
+      description: "practitioners sharing what they're actually shipping",
     },
   ];
 
-  const pastEvents = [
-    {
-      title: "Computer Vision Bootcamp",
-      date: "October 2025",
-      attendees: 45,
-    },
-    {
-      title: "Natural Language Processing Workshop",
-      date: "September 2025",
-      attendees: 38,
-    },
-    {
-      title: "AI Career Fair",
-      date: "August 2025",
-      attendees: 120,
-    },
-  ];
-
-  const eventTypes = [
-    { name: "Workshops", icon: "🛠️", description: "Hands-on learning sessions" },
-    { name: "Seminars", icon: "📚", description: "In-depth topic exploration" },
-    { name: "Hackathons", icon: "💻", description: "Build and compete" },
-    { name: "Networking", icon: "🤝", description: "Connect with peers" },
+  const differentiators = [
+    "Built around action, not theory",
+    "You learn with others, not alone",
+    "Led by people building at the frontier",
+    "Immediate application to your real work",
   ];
 
   return (
@@ -85,37 +51,14 @@ export default function Events() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="gradient-text">Events</span> & Workshops
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-              Join our community events, workshops, and hackathons to learn, build, and connect with fellow AI enthusiasts.
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Hands-on learning designed for real-world impact. Our sessions are built for professionals who want to upgrade capability, not just consume information.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Event Types */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {eventTypes.map((type, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="text-center">
-                  <div className="text-4xl mb-2">{type.icon}</div>
-                  <h3 className="font-bold text-white mb-1">{type.name}</h3>
-                  <p className="text-sm text-gray-400">{type.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Events */}
+      {/* What We Offer */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -126,15 +69,12 @@ export default function Events() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Upcoming <span className="gradient-text">Events</span>
+              What We <span className="gradient-text">Offer</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Don't miss out on these exciting opportunities to learn and grow
-            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {upcomingEvents.map((event, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {offerings.map((offering, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -143,31 +83,8 @@ export default function Events() {
                 viewport={{ once: true }}
               >
                 <Card>
-                  <div className="flex items-start justify-between mb-3">
-                    <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-semibold rounded-full">
-                      {event.type}
-                    </span>
-                    <span className="text-accent-cyan text-sm font-semibold">
-                      {event.spots}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl font-bold mb-2 text-white">{event.title}</h3>
-
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-gray-400">
-                      <span className="mr-2">📅</span>
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center text-gray-400">
-                      <span className="mr-2">🕐</span>
-                      <span>{event.time}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-400 mb-4">{event.description}</p>
-
-                  <Button className="w-full">Register Now</Button>
+                  <h3 className="text-xl font-bold mb-2 text-white">{offering.title}</h3>
+                  <p className="text-gray-400">{offering.description}</p>
                 </Card>
               </motion.div>
             ))}
@@ -175,7 +92,7 @@ export default function Events() {
         </div>
       </section>
 
-      {/* Past Events */}
+      {/* Luma Events Showcase */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-secondary">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -183,60 +100,139 @@ export default function Events() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Past <span className="gradient-text">Events</span>
+              Upcoming <span className="gradient-text">Events</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Check out what we've accomplished together
+              Join us for our next live sessions
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pastEvents.map((event, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card>
-                  <div className="h-32 bg-gradient-to-br from-primary/20 to-accent-purple/20 rounded-lg mb-4 flex items-center justify-center">
-                    <span className="text-5xl">🎉</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">{event.title}</h3>
-                  <div className="flex items-center justify-between text-gray-400">
-                    <span>{event.date}</span>
-                    <span className="font-semibold text-primary">{event.attendees} attendees</span>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
+          {/* Luma Event Embed */}
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="rounded-xl overflow-hidden border border-gray-800 bg-background">
+                <iframe
+                  src="https://lu.ma/embed/event/evt-00wvf46f"
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  style={{ border: 'none' }}
+                  allowFullScreen
+                  aria-hidden="false"
+                  tabIndex={0}
+                ></iframe>
+              </div>
+              <div className="mt-6 text-center">
+                <a
+                  href="https://lu.ma/00wvf46f"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary-light transition-colors"
+                >
+                  View event details on Luma →
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* What Makes Our Events Different */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <Card className="text-center bg-gradient-to-br from-primary/10 to-accent-purple/10 border-primary/30" hover={false}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Want to Host an Event?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                We're always looking for community members to share their knowledge and expertise
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              What Makes Our Events <span className="gradient-text">Different</span>
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Card hover={false} className="bg-gradient-to-br from-primary/5 to-accent-purple/5">
+              <ul className="space-y-4">
+                {differentiators.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-start text-lg text-gray-300"
+                  >
+                    <span className="text-primary mr-3 text-2xl flex-shrink-0">✓</span>
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Who Attends */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-secondary">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Who <span className="gradient-text">Attends</span>
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Professionals, consultants, analysts, strategists, creatives, founders, operators, and early‑stage builders looking to sharpen their edge.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Attend or Teach */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Attend or <span className="gradient-text">Teach</span>
+            </h2>
+            <div className="space-y-4 mb-8">
+              <p className="text-xl text-gray-300">
+                Want to learn? Join an upcoming session.
               </p>
-              <Button size="lg">Propose an Event</Button>
-            </motion.div>
-          </Card>
+              <p className="text-xl text-gray-300">
+                Have something to teach? Apply to lead a workshop.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg">See Upcoming Events</Button>
+              <Button variant="outline" size="lg">Teach a Class</Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
