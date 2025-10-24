@@ -120,12 +120,12 @@ export default function Events() {
             >
               <div className="rounded-xl overflow-hidden border border-gray-800 bg-background">
                 <iframe
-                  src="https://lu.ma/embed/event/00wvf46f"
+                  src="https://luma.com/embed/event/evt-7DUMFkEmlT5H3e0/simple"
                   width="100%"
                   height="600"
                   frameBorder="0"
-                  style={{ border: 'none' }}
-                  allowFullScreen
+                  style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
+                  allow="fullscreen; payment"
                   aria-hidden="false"
                   tabIndex={0}
                 ></iframe>
