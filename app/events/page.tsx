@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 export default function Events() {
   const offerings = [
@@ -93,7 +94,7 @@ export default function Events() {
       </section>
 
       {/* Luma Events Showcase */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-secondary">
+      <section id="upcoming-events" className="py-20 px-4 sm:px-6 lg:px-8 bg-background-secondary">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -229,8 +230,12 @@ export default function Events() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">See Upcoming Events</Button>
-              <Button variant="outline" size="lg">Teach a Class</Button>
+              <Link href="#upcoming-events">
+                <Button size="lg">See Upcoming Events</Button>
+              </Link>
+              <Link href="https://stingy-eater-31d.notion.site/2939b18fa25d8009bd29f28f2509378c?pvs=105" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="lg">Teach a Class</Button>
+              </Link>
             </div>
           </motion.div>
         </div>

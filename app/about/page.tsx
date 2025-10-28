@@ -5,10 +5,11 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 export default function About() {
   const howWeTeach = [
-    "Live, interactive workshops (not webinars)",
+    "Live, interactive workshops",
     "Practical exercises you can apply immediately",
     "Real tools, real workflows, real use cases",
     "Sessions led by active builders and founders",
@@ -50,30 +51,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
-              <p>
-                Unlock Lab is a modern learning community built for professionals who want to stay ahead of the curve — not by watching from the sidelines, but by building new capability through hands-on practice.
-              </p>
-              <p>
-                AI is no longer optional. It is becoming the operating system of modern work. The people who adopt it early will have an enduring advantage.
-              </p>
-              <p className="text-2xl font-semibold text-white">
-                We exist to make that advantage accessible.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Philosophy Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-secondary">
         <div className="max-w-4xl mx-auto">
@@ -91,7 +68,7 @@ export default function About() {
               Learn by doing. Learn together. Stay current.
             </p>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Real skill is built through practice, feedback, and repetition — not passive content. Unlock Lab is a place where you experiment, apply, and level up in real time.
+              Real skill is built through practice, feedback, and repetition - not passive content. Unlock Lab is a place where you experiment, apply, and level up in real time.
             </p>
           </motion.div>
         </div>
@@ -193,7 +170,7 @@ export default function About() {
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
               <p>
-                Unlock Lab is run by builders, startup founders, and technologists working at the frontier of AI. We ship, test, and push the edges — then bring what we learn back to the community.
+                Unlock Lab is run by builders, startup founders, and technologists working at the frontier of AI. We ship, test, and push the edges - then bring what we learn back to the community.
               </p>
               <p className="text-2xl font-semibold text-white">
                 We don't teach theory. We teach what we use every day.
@@ -256,12 +233,14 @@ export default function About() {
             className="text-center"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              The <span className="gradient-text">Invitation</span>
+              <span className="gradient-text">You're Invited</span>
             </h2>
             <p className="text-2xl text-gray-300 leading-relaxed mb-8">
-              If you want to unlock new leverage in how you work — you belong here.
+              If you want to unlock new leverage in how you work - you belong here.
             </p>
-            <Button size="lg">Join the Community</Button>
+            <Link href="https://stingy-eater-31d.notion.site/2999b18fa25d808fbeaae562428db4eb?pvs=105" target="_blank" rel="noopener noreferrer">
+              <Button size="lg">Join the Community</Button>
+            </Link>
           </motion.div>
         </div>
       </section>

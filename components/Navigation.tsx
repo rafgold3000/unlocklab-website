@@ -33,9 +33,11 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <button className="px-6 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity">
-              Join Community
-            </button>
+            <Link href="https://stingy-eater-31d.notion.site/2999b18fa25d808fbeaae562428db4eb?pvs=105" target="_blank" rel="noopener noreferrer">
+              <button className="px-6 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity">
+                Join Community
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -82,9 +84,11 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <button className="w-full px-6 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity">
-                Join Community
-              </button>
+              <Link href="https://stingy-eater-31d.notion.site/2999b18fa25d808fbeaae562428db4eb?pvs=105" target="_blank" rel="noopener noreferrer">
+                <button className="w-full px-6 py-2 bg-gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity">
+                  Join Community
+                </button>
+              </Link>
             </div>
           </motion.div>
         )}

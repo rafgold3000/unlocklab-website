@@ -82,7 +82,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Learn skills you can leverage anywhere.
+              Learn AI skills you can leverage anywhere.
             </motion.p>
 
             <motion.p
@@ -91,9 +91,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              AI is reshaping how the world works. The people who know how to use it aren't just keeping up — they're pulling ahead.
+              AI is reshaping how the world works. Everyone in the workforce needs to learn how to leverage new capabilities and grow their knowledge - now.
               <br /><br />
-              Unlock Lab helps professionals turn AI from a curiosity into a capability — building fluency, confidence, and real leverage in how you work.
+              Unlock Lab helps professionals turn AI from a curiosity into a capability - building fluency, confidence, and real leverage in how you work.
             </motion.p>
 
             <motion.div
@@ -102,9 +102,11 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <Button size="lg">Join the Community</Button>
+              <Link href="https://stingy-eater-31d.notion.site/2999b18fa25d808fbeaae562428db4eb?pvs=105" target="_blank" rel="noopener noreferrer">
+                <Button size="lg">Join the Community</Button>
+              </Link>
               <Link href="/events">
-                <Button variant="outline" size="lg">See Upcoming Workshops</Button>
+                <Button variant="outline" size="lg">See Upcoming Events</Button>
               </Link>
             </motion.div>
           </motion.div>
@@ -112,73 +114,6 @@ export default function Home() {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              What We <span className="gradient-text">Do</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Card>
-                <h3 className="text-2xl font-bold mb-3 text-white">Learn Fast. Build Faster.</h3>
-                <p className="text-gray-400 leading-relaxed">
-                  Learn how to use AI the way top builders and professionals use it — to produce more, think bigger, and move faster.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card>
-                <h3 className="text-2xl font-bold mb-3 text-white">A Community for Builders, Doers & Innovators.</h3>
-                <p className="text-gray-400 leading-relaxed">
-                  Join classes, workshops, and events designed for people who learn by doing and grow by sharing.
-                </p>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why It Matters Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-secondary">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why It <span className="gradient-text">Matters</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Not learning AI today is like ignoring electricity in the industrial revolution. The gap between those who use it and those who don't is widening fast.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* What You'll Gain Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -188,34 +123,28 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              What You'll <span className="gradient-text">Gain</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              What is <span className="gradient-text">Unlock Lab?</span>
             </h2>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
+            className="text-center"
           >
-            <Card hover={false} className="bg-gradient-to-br from-primary/5 to-accent-purple/5">
-              <ul className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start text-lg text-gray-300"
-                  >
-                    <span className="text-primary mr-3 text-2xl flex-shrink-0">✓</span>
-                    <span>{benefit}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </Card>
+            <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <p>
+                Unlock Lab is a modern learning community built for professionals who want to stay ahead of the curve - not by watching from the sidelines, but by building new capability through hands-on practice.
+              </p>
+              <p>
+                AI is no longer optional. It is becoming the operating system of modern work. The people who adopt it early will have an enduring advantage.
+              </p>
+              <p className="text-2xl font-semibold text-white">
+                We exist to make that advantage accessible.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -234,53 +163,8 @@ export default function Home() {
               Why <span className="gradient-text">Unlock Lab</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Run by builders, founders, and technologists working at the edge of AI — we build first and teach from experience, not theory. Learn from people who move at the pace of change.
+              Run by builders, founders, and technologists working at the edge of AI - we build first and teach from experience, not theory. Learn from people who move at the pace of change.
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Who This Is For Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Who This Is <span className="gradient-text">For</span>
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Card hover={false} className="bg-gradient-to-br from-primary/5 to-accent-purple/5 mb-8">
-              <ul className="space-y-4 mb-6">
-                {audience.map((group, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start text-lg text-gray-300"
-                  >
-                    <span className="text-accent-cyan mr-3 text-2xl flex-shrink-0">•</span>
-                    <span>{group}</span>
-                  </motion.li>
-                ))}
-              </ul>
-              <p className="text-xl text-gray-300 pt-6 border-t border-gray-700 leading-relaxed">
-                If you want to stay relevant, earn more leverage, and future‑proof your craft — this is for you.
-              </p>
-            </Card>
           </motion.div>
         </div>
       </section>
@@ -299,11 +183,15 @@ export default function Home() {
               It's time to level up.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-              <Button size="lg">Join the Community</Button>
+              <Link href="https://stingy-eater-31d.notion.site/2999b18fa25d808fbeaae562428db4eb?pvs=105" target="_blank" rel="noopener noreferrer">
+                <Button size="lg">Join the Community</Button>
+              </Link>
               <Link href="/events">
                 <Button variant="outline" size="lg">Attend an Event</Button>
               </Link>
-              <Button variant="secondary" size="lg">Teach a Class</Button>
+              <Link href="https://stingy-eater-31d.notion.site/2939b18fa25d8009bd29f28f2509378c?pvs=105" target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" size="lg">Teach a Class</Button>
+              </Link>
             </div>
           </motion.div>
         </div>
