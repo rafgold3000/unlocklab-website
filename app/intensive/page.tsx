@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Definition from "@/components/Definition";
+import InquiryForm from "@/components/InquiryForm";
 import Proof from "@/components/Proof";
 import { OFFER, PARTNERS } from "@/lib/offer";
 
@@ -156,7 +157,7 @@ export default function IntensivePage() {
             <p className="mt-2 text-muted">
               Tell us a little about your work. We&apos;ll be in touch {OFFER.responseTime}.
             </p>
-            {/* InquiryForm lands here in Task 6 */}
+            <InquiryForm />
           </div>
         </div>
       </section>
