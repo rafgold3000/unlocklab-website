@@ -3,35 +3,45 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
-  }
-
   * {
-    @apply border-gray-800;
-  }
-
-  body {
-    @apply bg-background text-gray-100;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply border-rule;
   }
 
   html {
     @apply scroll-smooth;
   }
-}
 
-@layer utilities {
-  .text-balance {
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
     text-wrap: balance;
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary via-accent-purple to-accent-cyan bg-clip-text text-transparent;
+  a {
+    @apply underline-offset-4;
   }
 
-  .glow-effect {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-violet;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-violet;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-5xl px-6 sm:px-8;
+  }
+
+  .section {
+    @apply border-t border-rule py-16 sm:py-20;
   }
 }

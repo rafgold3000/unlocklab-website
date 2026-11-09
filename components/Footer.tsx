@@ -1,27 +1,37 @@
 import Link from "next/link";
+import CurrentYear from "@/components/CurrentYear";
+import { CONTACT_EMAIL } from "@/lib/offer";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-background-secondary border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Brand */}
-        <div className="mb-8">
-          <Link href="/" className="inline-block mb-4">
-            <span className="text-2xl font-bold gradient-text">UnlockLab</span>
+    <footer className="border-t border-rule">
+      <div className="container-page flex flex-col gap-8 py-12 md:flex-row md:items-start md:justify-between">
+        <div>
+          <Link href="/" className="font-serif text-xl font-semibold text-ink no-underline">
+            UnlockLab
           </Link>
-          <p className="text-gray-400 max-w-md">
-            Empowering professionals and teams to harness the power of AI through hands-on learning, educational offerings, and community.
-          </p>
+          <p className="mt-2 text-sm text-muted">A partnership between UnlockLab and SkWx.</p>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © {currentYear} UnlockLab. All rights reserved.
-          </p>
-        </div>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <Link href="/events" className="text-muted hover:text-ink">
+              Past workshops
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" className="text-muted hover:text-ink">
+              About
+            </Link>
+          </li>
+          <li>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-muted hover:text-ink">
+              {CONTACT_EMAIL}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="container-page border-t border-rule py-6 text-xs text-muted">
+        © <CurrentYear /> UnlockLab. All rights reserved.
       </div>
     </footer>
   );

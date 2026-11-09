@@ -190,7 +190,7 @@ export default function Home() {
                 <Button variant="outline" size="lg">Attend an Event</Button>
               </Link>
               <Link href="https://stingy-eater-31d.notion.site/2939b18fa25d8009bd29f28f2509378c?pvs=105" target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" size="lg">Teach a Class</Button>
+                <Button variant="outline" size="lg">Teach a Class</Button>
               </Link>
             </div>
           </motion.div>

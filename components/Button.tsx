@@ -1,39 +1,52 @@
+import Link from "next/link";
 import { ReactNode } from "react";
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
+  href?: string;
+  variant?: "primary" | "outline";
+  size?: "md" | "lg";
+  type?: "button" | "submit";
+  disabled?: boolean;
   onClick?: () => void;
   className?: string;
 }
 
+const base =
+  "inline-flex items-center justify-center rounded font-semibold no-underline transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60";
+
+const sizes = {
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-6 py-3 text-base",
+};
+
+const variants = {
+  primary: "bg-violet text-white hover:bg-violet-dark",
+  outline: "border border-ink text-ink hover:bg-ink hover:text-paper",
+};
+
 export default function Button({
   children,
+  href,
   variant = "primary",
   size = "md",
+  type = "button",
+  disabled,
   onClick,
   className = "",
 }: ButtonProps) {
-  const baseStyles = "font-medium rounded-lg transition-all duration-200 inline-flex items-center justify-center";
+  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
 
-  const variants = {
-    primary: "bg-gradient-primary text-white hover:opacity-90 hover:shadow-lg hover:shadow-primary/50",
-    secondary: "bg-gray-800 text-white hover:bg-gray-700",
-    outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-  };
-
-  const sizes = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg",
-  };
+  if (href) {
+    return (
+      <Link href={href} className={classes} onClick={onClick}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
-    <button
-      onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
-    >
+    <button type={type} disabled={disabled} onClick={onClick} className={classes}>
       {children}
     </button>
   );

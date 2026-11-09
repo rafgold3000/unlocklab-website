@@ -2,34 +2,21 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        background: {
-          DEFAULT: "#0a0a0a",
-          secondary: "#111111",
-        },
-        primary: {
-          DEFAULT: "#3b82f6",
-          light: "#60a5fa",
-          dark: "#2563eb",
-        },
-        accent: {
-          purple: "#a855f7",
-          cyan: "#06b6d4",
-          pink: "#ec4899",
-        },
+        paper: { DEFAULT: "#f6f2ea", deep: "#efe9dd" },
+        ink: "#1c1b19",
+        muted: "#5b574f",
+        rule: "#e3ddd0",
+        violet: { DEFAULT: "#5b4bd1", dark: "#4a3cb8" },
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "gradient-primary": "linear-gradient(135deg, #3b82f6 0%, #a855f7 100%)",
-        "gradient-accent": "linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #a855f7 100%)",
+      fontFamily: {
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
     },
   },
