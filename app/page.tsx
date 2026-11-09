@@ -1,203 +1,115 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import Button from "@/components/Button";
-import Card from "@/components/Card";
+import type { Metadata } from "next";
 import Link from "next/link";
+import Button from "@/components/Button";
+import Definition from "@/components/Definition";
+import Proof from "@/components/Proof";
+import { OFFER } from "@/lib/offer";
+
+export const metadata: Metadata = {
+  title: { absolute: `${OFFER.name} · UnlockLab` },
+  description:
+    "Build your own AI productivity system in four weeks, live online, with SkWx builders. Claude Code and Claude Cowork, built around your real work.",
+  alternates: { canonical: "/" },
+};
+
+const steps = [
+  {
+    title: "A discovery call",
+    body: "A SkWx consultant learns your role, your priorities and the problems you want solved, and the four weeks are shaped around them.",
+  },
+  {
+    title: `${OFFER.sessions} live sessions, online`,
+    body: `Two hours a week, and every week ends with something you have built.`,
+  },
+  {
+    title: "A working system",
+    body: "You leave with your Command Center already handling your first recurring tasks, and the know-how to keep extending it.",
+  },
+];
 
 export default function Home() {
-  const benefits = [
-    "Master AI tools that 10x your productivity",
-    "Automate repetitive tasks and workflows",
-    "Reclaim time for your highest‑value work",
-    "Stay current as the tech evolves",
-    "Turn curiosity into capability",
-  ];
-
-  const audience = [
-    "Solo professionals & consultants",
-    "Creators, analysts, strategists, operators",
-    "Knowledge workers and emerging builders",
-    "Teams who prefer learning by doing",
-  ];
-
   return (
-    <div className="min-h-screen">
-      <Navigation />
-
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        {/* Animated Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent-purple/20 to-accent-cyan/20 opacity-30">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+    <>
+      <section className="container-page py-20 sm:py-28">
+        <p className="eyebrow">{OFFER.label}</p>
+        <h1 className="mt-4 max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+          {OFFER.headline}
+        </h1>
+        <p className="mt-6 max-w-xl text-lg text-muted">{OFFER.lede}</p>
+        <div className="mt-8">
+          <Button href="/intensive#start" size="lg">
+            Start a conversation
+          </Button>
         </div>
-
-        {/* Floating Orbs */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/30 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-purple/30 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="gradient-text">Unlock Your Superpowers</span>
-            </motion.h1>
-
-            <motion.p
-              className="text-2xl md:text-3xl text-gray-300 mb-6 max-w-3xl mx-auto font-semibold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Learn AI skills you can leverage anywhere.
-            </motion.p>
-
-            <motion.p
-              className="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              AI is reshaping how the world works. Everyone in the workforce needs to learn how to leverage new capabilities and grow their knowledge - now.
-              <br /><br />
-              Unlock Lab helps professionals turn AI from a curiosity into a capability - building fluency, confidence, and real leverage in how you work.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <Link href="https://stingy-eater-31d.notion.site/2999b18fa25d808fbeaae562428db4eb?pvs=105" target="_blank" rel="noopener noreferrer">
-                <Button size="lg">Join the Community</Button>
-              </Link>
-              <Link href="/events">
-                <Button variant="outline" size="lg">See Upcoming Events</Button>
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
+        <Definition className="mt-14" />
       </section>
 
-      {/* What We Do Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              What is <span className="gradient-text">Unlock Lab?</span>
-            </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
-              <p>
-                Unlock Lab is a modern learning community built for professionals who want to stay ahead of the curve - not by watching from the sidelines, but by building new capability through hands-on practice.
-              </p>
-              <p>
-                AI is no longer optional. It is becoming the operating system of modern work. The people who adopt it early will have an enduring advantage.
-              </p>
-              <p className="text-2xl font-semibold text-white">
-                We exist to make that advantage accessible.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Unlock Lab Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-secondary">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why <span className="gradient-text">Unlock Lab</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Run by builders, founders, and technologists working at the edge of AI - we build first and teach from experience, not theory. Learn from people who move at the pace of change.
+      <section className="section">
+        <div className="container-page grid gap-10 md:grid-cols-[1fr_2fr]">
+          <h2 className="text-3xl font-semibold">The hole in the AI story</h2>
+          <div className="max-w-2xl space-y-4 text-lg">
+            <p>
+              Large companies have technology teams rolling AI out across the business. Developers
+              and early adopters live inside the newest tools every day.
             </p>
-          </motion.div>
+            <p>
+              Busy professionals in the middle are somehow expected to produce the productivity
+              gains on their own. So they tinker: a class here, an article there, YouTube videos
+              from people no one has vetted. It adds up to hundreds of hours spent understanding,
+              practicing and working things out alone.
+            </p>
+            <p className="font-serif text-xl">
+              The intensive closes that gap. You build your own system, with the people who build
+              these systems for clients.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-secondary">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-              It's time to level up.
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-              <Link href="https://stingy-eater-31d.notion.site/2999b18fa25d808fbeaae562428db4eb?pvs=105" target="_blank" rel="noopener noreferrer">
-                <Button size="lg">Join the Community</Button>
-              </Link>
-              <Link href="/events">
-                <Button variant="outline" size="lg">Attend an Event</Button>
-              </Link>
-              <Link href="https://stingy-eater-31d.notion.site/2939b18fa25d8009bd29f28f2509378c?pvs=105" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg">Teach a Class</Button>
-              </Link>
-            </div>
-          </motion.div>
+      <section className="section">
+        <div className="container-page">
+          <p className="eyebrow">What the architecture does</p>
+          <h2 className="mt-3 text-3xl font-semibold">Hours of work, down to minutes</h2>
+          <div className="mt-6">
+            <Proof intro="These results come from the Command Center architecture SkWx deploys for clients. In the intensive, you build your own version of it, around your own work." />
+          </div>
         </div>
       </section>
 
-      <Footer />
-    </div>
+      <section className="section">
+        <div className="container-page">
+          <h2 className="text-3xl font-semibold">How it works</h2>
+          <ol className="mt-10 grid gap-10 md:grid-cols-3">
+            {steps.map((step, i) => (
+              <li key={step.title}>
+                <span className="font-serif text-sm text-violet">0{i + 1}</span>
+                <h3 className="mt-1 text-xl font-semibold">{step.title}</h3>
+                <p className="mt-2 text-muted">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+          <Link href="/intensive" className="mt-10 inline-block font-semibold text-violet">
+            See the full four weeks →
+          </Link>
+        </div>
+      </section>
+
+      <section className="section bg-paper-deep">
+        <div className="container-page">
+          <p className="eyebrow">{OFFER.cohortStatus}</p>
+          <h2 className="mt-3 max-w-2xl text-3xl font-semibold">
+            Tell us about your work. We&apos;ll tell you what we&apos;d build.
+          </h2>
+          <div className="mt-8 flex flex-wrap items-center gap-6">
+            <Button href="/intensive#start" size="lg">
+              Start a conversation
+            </Button>
+            <Link href="/events" className="text-sm text-muted hover:text-ink">
+              Past workshops
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
