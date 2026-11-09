@@ -28,3 +28,24 @@ test("no copy uses banned classroom or hype words", () => {
     expect(text).not.toContain(w);
   }
 });
+
+import { courseJsonLd, organizationJsonLd } from "@/lib/jsonld";
+
+test("course JSON-LD mirrors offer facts", () => {
+  const c = courseJsonLd() as any;
+  expect(c["@type"]).toBe("Course");
+  expect(c.name).toBe(OFFER.name);
+  expect(c.offers.price).toBe("1500");
+  expect(c.offers.priceCurrency).toBe("USD");
+  expect(c.hasCourseInstance.courseMode).toBe(OFFER.mode);
+  expect(c.provider.map((p: { name: string }) => p.name)).toEqual(["UnlockLab", "SkWx"]);
+  const json = JSON.stringify(c);
+  expect(json).not.toContain("startDate");
+  expect(json).not.toContain("aggregateRating");
+});
+
+test("organization JSON-LD names UnlockLab at the canonical URL", () => {
+  const o = organizationJsonLd() as any;
+  expect([o["@type"], o.name, o.url]).toEqual(["Organization", "UnlockLab", "https://unlocklab.ai"]);
+  expect(JSON.stringify(o)).not.toContain("address");
+});

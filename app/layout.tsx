@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { organizationJsonLd } from "@/lib/jsonld";
 import { OFFER, SITE_URL } from "@/lib/offer";
 import "./globals.css";
 
@@ -39,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <body>
+        <JsonLd data={organizationJsonLd()} />
         <Navigation />
         <main>{children}</main>
         <Footer />

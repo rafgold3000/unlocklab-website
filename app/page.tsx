@@ -6,7 +6,7 @@ import Proof from "@/components/Proof";
 import { OFFER } from "@/lib/offer";
 
 export const metadata: Metadata = {
-  title: { absolute: `${OFFER.name} · UnlockLab` },
+  title: { absolute: `UnlockLab · ${OFFER.headline.replace(/\.$/, "")}` },
   description:
     "Build your own AI productivity system in four weeks, live online, with SkWx builders. Claude Code and Claude Cowork, built around your real work.",
   alternates: { canonical: "/" },

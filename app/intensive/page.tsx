@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Definition from "@/components/Definition";
 import InquiryForm from "@/components/InquiryForm";
+import JsonLd from "@/components/JsonLd";
+import { courseJsonLd } from "@/lib/jsonld";
 import Proof from "@/components/Proof";
 import { OFFER, PARTNERS } from "@/lib/offer";
 
@@ -15,6 +17,7 @@ const price = `$${OFFER.priceUsd.toLocaleString("en-US")}`;
 export default function IntensivePage() {
   return (
     <>
+      <JsonLd data={courseJsonLd()} />
       <section className="container-page py-20 sm:py-24">
         <p className="eyebrow">{OFFER.label}</p>
         <h1 className="mt-4 max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight">
