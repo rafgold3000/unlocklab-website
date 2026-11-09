@@ -1,0 +1,30 @@
+import { expect, test } from "vitest";
+import { OFFER, PROOF, PROOF_ATTRIBUTION, CONTACT_EMAIL } from "@/lib/offer";
+
+test("offer facts match the spec", () => {
+  expect(OFFER.name).toBe("The Command Center Build Intensive");
+  expect(OFFER.headline).toBe("Build your personal productivity engine.");
+  expect(OFFER.definition).toBe(
+    "A personal productivity engine: your context, your voice, your design system, your workflows.",
+  );
+  expect(OFFER.priceUsd).toBe(1500);
+  expect([OFFER.sessions, OFFER.sessionHours, OFFER.mode]).toEqual([4, 2, "online"]);
+  expect(CONTACT_EMAIL).toBe("rafael@skwx.ai");
+  expect(PROOF_ATTRIBUTION).toBe(
+    "Results reported by the CEO of a strategic communications firm, for their own work, after six months using the system.",
+  );
+  expect(PROOF.map((p) => [p.before, p.after])).toEqual([
+    ["4–6 hours", "45 minutes"],
+    ["2 staff days", "1 hour"],
+    ["6–7 hours", "1 hour"],
+    ["2–3 hours a week", "minutes"],
+  ]);
+  expect(OFFER.weeks).toHaveLength(4);
+});
+
+test("no copy uses banned classroom or hype words", () => {
+  const text = JSON.stringify({ OFFER, PROOF }).toLowerCase();
+  for (const w of ["course", "class", "lesson", "curriculum", "student", "revolutionary", "10x", "unlock your potential"]) {
+    expect(text).not.toContain(w);
+  }
+});
