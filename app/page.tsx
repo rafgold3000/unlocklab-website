@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Definition from "@/components/Definition";
-import Proof from "@/components/Proof";
-import { OFFER, PROOF_HEADING, siteDescription } from "@/lib/offer";
+import ProofSection from "@/components/ProofSection";
+import { OFFER, siteDescription } from "@/lib/offer";
 
 export const metadata: Metadata = {
   title: { absolute: `UnlockLab · ${OFFER.headline.replace(/\.$/, "")}` },
@@ -65,15 +65,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container-page">
-          <p className="eyebrow">What the architecture does</p>
-          <h2 className="mt-3 text-3xl font-semibold">{PROOF_HEADING}</h2>
-          <div className="mt-6">
-            <Proof intro="These results come from the Command Center architecture SkWx deploys for clients. In the intensive, you build your own version of it, around your own work." />
-          </div>
-        </div>
-      </section>
+      <ProofSection />
 
       <section className="section">
         <div className="container-page">

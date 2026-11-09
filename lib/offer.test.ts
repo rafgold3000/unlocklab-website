@@ -50,10 +50,15 @@ test("organization JSON-LD names UnlockLab at the canonical URL", () => {
   expect(JSON.stringify(o)).not.toContain("address");
 });
 
-import { PROOF_HEADING, intensiveDescription, siteDescription } from "@/lib/offer";
+import { PROOF_SECTION, intensiveDescription, siteDescription } from "@/lib/offer";
 
-test("proof heading claims no more than the results show", () => {
-  expect(PROOF_HEADING).toBe("Hours of work, down to an hour or less");
+test("proof section leads with the problem, then the Command Center contrast", () => {
+  expect(PROOF_SECTION.heading).toBe("Supercharged productivity");
+  expect(PROOF_SECTION.today.items.length).toBeGreaterThanOrEqual(4);
+  expect(PROOF_SECTION.withCommandCenter.items).toHaveLength(PROOF_SECTION.today.items.length);
+  const text = JSON.stringify(PROOF_SECTION).toLowerCase();
+  for (const w of ["context", "voice", "design system", "inventory"]) expect(text).toContain(w);
+  for (const w of ["course", "class", "student", "revolutionary", "10x"]) expect(text).not.toContain(w);
 });
 
 test("search descriptions are built from offer facts", () => {

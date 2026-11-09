@@ -96,7 +96,38 @@ export const PROOF = [
   { task: "Team management and pipeline visibility", before: "2–3 hours a week", after: "minutes" },
 ] as const;
 
-export const PROOF_HEADING = "Hours of work, down to an hour or less";
+// The "what changes" section: the everyday problem, the Command Center contrast, then the results.
+// Rows in today/withCommandCenter pair up one-to-one.
+export const PROOF_SECTION = {
+  eyebrow: "What changes",
+  heading: "Supercharged productivity",
+  lede: "Most professionals use AI the same way: open a chat, explain everything, paste in the background, fix the tone, reformat the output. Then do it all again tomorrow. The tool is powerful, but it knows nothing about you, so every task starts from zero.",
+  today: {
+    title: "How most people use AI today",
+    items: [
+      "Every conversation starts from scratch",
+      "It doesn't know your role, your priorities or your clients",
+      "Drafts come back generic, not in your voice",
+      "Documents and decks need reformatting every time",
+      "What you know lives in your head and scattered files, out of reach",
+      "You re-explain the same tasks, step by step, again and again",
+    ],
+  },
+  withCommandCenter: {
+    title: "With a Command Center",
+    items: [
+      "Your work picks up where you left off, in a system built for you",
+      "Your context (role, objectives, projects) is loaded before you type a word",
+      "Drafts come back in your voice, from style files built on your own writing",
+      "Your design system makes documents and decks come out on-brand",
+      "An inventory of your knowledge, in reference files Claude draws on every time",
+      "Your recurring workflows run as skills, connected to the tools you use",
+    ],
+  },
+  resultsTitle: "What that looks like in practice",
+  resultsIntro:
+    "These results come from the Command Center architecture SkWx deploys for clients. In the intensive, you build your own version of it, around your own work.",
+} as const;
 
 export const PROOF_ATTRIBUTION =
   "Results reported by the CEO of a strategic communications firm, for their own work, after six months using the system.";

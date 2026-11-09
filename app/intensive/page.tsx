@@ -3,8 +3,8 @@ import Definition from "@/components/Definition";
 import InquiryForm from "@/components/InquiryForm";
 import JsonLd from "@/components/JsonLd";
 import { courseJsonLd } from "@/lib/jsonld";
-import Proof from "@/components/Proof";
-import { OFFER, PARTNERS, PROOF_HEADING, intensiveDescription } from "@/lib/offer";
+import ProofSection from "@/components/ProofSection";
+import { OFFER, intensiveDescription } from "@/lib/offer";
 
 export const metadata: Metadata = {
   title: OFFER.name,
@@ -110,17 +110,7 @@ export default function IntensivePage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container-page">
-          <p className="eyebrow">What the architecture does</p>
-          <h2 className="mt-3 text-3xl font-semibold">{PROOF_HEADING}</h2>
-          <div className="mt-6">
-            <Proof
-              intro={`These results come from the Command Center architecture ${PARTNERS.skwx.name} deploys for clients. In the intensive, you build your own version of it, around your own work.`}
-            />
-          </div>
-        </div>
-      </section>
+      <ProofSection />
 
       <section className="section">
         <div className="container-page grid gap-12 md:grid-cols-2">
