@@ -101,7 +101,7 @@ export const PROOF = [
 export const PROOF_SECTION = {
   eyebrow: "What changes",
   heading: "Supercharged productivity",
-  lede: "It's a familiar routine. You sit down with an open chat window and start entering prompts. You drag in reference files, paste in an email thread or last quarter's numbers, and explain the task and who it's for. It works, and it's how many of us started. But the setup is yours to repeat each time, and the gains don't build on each other. A Command Center does that setup once, and keeps it.",
+  lede: "It's a familiar routine. You sit down with an open chat window and start entering prompts. You drag in reference files, paste in an email thread or last quarter's numbers, and explain the task and who it's for. It works, and it's how many of us started. But that setup wastes time on every task, and it leaves much of what AI can do on the table. A Command Center does that setup once, and keeps it.",
   today: {
     title: "The familiar routine",
     items: [
