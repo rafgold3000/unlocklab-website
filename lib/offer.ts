@@ -101,16 +101,16 @@ export const PROOF = [
 export const PROOF_SECTION = {
   eyebrow: "What changes",
   heading: "Supercharged productivity",
-  lede: "Most professionals use AI the same way: open a chat, explain everything, paste in the background, fix the tone, reformat the output. Then do it all again tomorrow. The tool is powerful, but it knows nothing about you, so every task starts from zero.",
+  lede: "It's a familiar routine. You sit down with an open chat window and start entering prompts. You drag in reference files, paste in an email thread or last quarter's numbers, and explain the task and who it's for. It works, and it's how many of us started. But the setup is yours to repeat each time, and the gains don't build on each other. A Command Center does that setup once, and keeps it.",
   today: {
-    title: "How most people use AI today",
+    title: "The familiar routine",
     items: [
-      "Every conversation starts from scratch",
-      "It doesn't know your role, your priorities or your clients",
-      "Drafts come back generic, not in your voice",
-      "Documents and decks need reformatting every time",
-      "What you know lives in your head and scattered files, out of reach",
-      "You re-explain the same tasks, step by step, again and again",
+      "Open a new chat window and start entering prompts",
+      "Explain your role, your goals and who the work is for",
+      "Edit the draft until it sounds like you",
+      "Copy the output into your own template and fix the formatting",
+      "Drag in reference files and paste in background so it has what it needs",
+      "Walk it through the same multi-step task again next time",
     ],
   },
   withCommandCenter: {

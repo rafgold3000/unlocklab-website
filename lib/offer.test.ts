@@ -61,6 +61,12 @@ test("proof section leads with the problem, then the Command Center contrast", (
   for (const w of ["course", "class", "student", "revolutionary", "10x"]) expect(text).not.toContain(w);
 });
 
+test("proof section describes the routine without generalizing about people", () => {
+  const text = JSON.stringify(PROOF_SECTION).toLowerCase();
+  for (const w of ["most people", "most professionals", "everyone"]) expect(text).not.toContain(w);
+  expect(text).toContain("chat window");
+});
+
 test("search descriptions are built from offer facts", () => {
   const changed = { ...OFFER, priceUsd: 1750, sessionHours: 3 };
   expect(intensiveDescription(changed)).toContain("$1,750");
