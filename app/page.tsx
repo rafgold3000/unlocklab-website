@@ -3,12 +3,11 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import Definition from "@/components/Definition";
 import Proof from "@/components/Proof";
-import { OFFER } from "@/lib/offer";
+import { OFFER, PROOF_HEADING, siteDescription } from "@/lib/offer";
 
 export const metadata: Metadata = {
   title: { absolute: `UnlockLab · ${OFFER.headline.replace(/\.$/, "")}` },
-  description:
-    "Build your own AI productivity system in four weeks, live online, with SkWx builders. Claude Code and Claude Cowork, built around your real work.",
+  description: siteDescription(OFFER),
   alternates: { canonical: "/" },
 };
 
@@ -69,7 +68,7 @@ export default function Home() {
       <section className="section">
         <div className="container-page">
           <p className="eyebrow">What the architecture does</p>
-          <h2 className="mt-3 text-3xl font-semibold">Hours of work, down to minutes</h2>
+          <h2 className="mt-3 text-3xl font-semibold">{PROOF_HEADING}</h2>
           <div className="mt-6">
             <Proof intro="These results come from the Command Center architecture SkWx deploys for clients. In the intensive, you build your own version of it, around your own work." />
           </div>

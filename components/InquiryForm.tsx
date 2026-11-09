@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import Button from "@/components/Button";
-import { EXPERIENCE_OPTIONS, LIMITS } from "@/lib/inquiry";
+import { EXPERIENCE_OPTIONS, HONEYPOT_FIELD, LIMITS, firstInvalidField } from "@/lib/inquiry";
 import { CONTACT_EMAIL, OFFER } from "@/lib/offer";
 
 type Status = "idle" | "sending" | "sent" | "failed";
@@ -29,7 +29,8 @@ export default function InquiryForm() {
     setStatus("sending");
     setErrors({});
 
-    const payload = Object.fromEntries(new FormData(event.currentTarget).entries());
+    const form = event.currentTarget;
+    const payload = Object.fromEntries(new FormData(form).entries());
     try {
       const res = await fetch("/api/inquiry", {
         method: "POST",
@@ -42,8 +43,12 @@ export default function InquiryForm() {
       }
       if (res.status === 400) {
         const data = await res.json().catch(() => ({}));
-        setErrors(data.errors ?? {});
+        const fieldErrors: Record<string, string> = data.errors ?? {};
+        setErrors(fieldErrors);
         setStatus("idle");
+        // Move focus to the first problem so keyboard and screen-reader users land on it.
+        const first = firstInvalidField(fieldErrors);
+        if (first) (form.elements.namedItem(first) as HTMLElement | null)?.focus();
         return;
       }
       setStatus("failed");
@@ -110,11 +115,15 @@ export default function InquiryForm() {
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
         <label>
           Website
-          <input name="website" tabIndex={-1} autoComplete="off" />
+          <input name={HONEYPOT_FIELD} tabIndex={-1} autoComplete="off" />
         </label>
       </div>
 
-      {errors.form && <p className="text-sm text-red-700">{errors.form}</p>}
+      {Object.keys(errors).length > 0 && (
+        <p role="alert" className="text-sm text-red-700">
+          {errors.form ?? "Please check the highlighted fields."}
+        </p>
+      )}
 
       {status === "failed" && (
         <p role="alert" className="text-sm text-red-700">

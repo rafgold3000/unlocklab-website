@@ -18,7 +18,11 @@ export async function POST(request: Request) {
   const result = validateInquiry(body);
   if (!result.ok) {
     // Bots get a normal-looking success so they don't retry; nothing is sent.
-    if (result.spam) return NextResponse.json({ ok: true });
+    if (result.spam) {
+      // Logged so a real person caught by the honeypot shows up in Vercel logs.
+      console.warn("[inquiry] honeypot hit; dropped submission");
+      return NextResponse.json({ ok: true });
+    }
     return NextResponse.json({ errors: result.errors }, { status: 400 });
   }
 

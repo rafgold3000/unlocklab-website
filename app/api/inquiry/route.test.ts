@@ -59,7 +59,7 @@ describe("POST /api/inquiry", () => {
   });
 
   test("spam returns 200 without sending", async () => {
-    const res = await post({ ...valid, website: "http://spam" });
+    const res = await post({ ...valid, hp_extra: "http://spam" });
     expect(res.status).toBe(200);
     expect(send).not.toHaveBeenCalled();
   });

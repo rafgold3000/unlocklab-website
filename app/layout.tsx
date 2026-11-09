@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { organizationJsonLd } from "@/lib/jsonld";
-import { OFFER, SITE_URL } from "@/lib/offer";
+import { OFFER, SITE_URL, siteDescription } from "@/lib/offer";
 import "./globals.css";
 
 const serif = Fraunces({
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: `${OFFER.name} · UnlockLab`,
     template: "%s · UnlockLab",
   },
-  description: `${OFFER.headline} Four weeks, live online, with the SkWx builders who deploy this system for clients. A partnership between UnlockLab and SkWx.`,
+  description: siteDescription(OFFER),
   openGraph: {
     siteName: "UnlockLab",
     type: "website",

@@ -96,6 +96,8 @@ export const PROOF = [
   { task: "Team management and pipeline visibility", before: "2–3 hours a week", after: "minutes" },
 ] as const;
 
+export const PROOF_HEADING = "Hours of work, down to an hour or less";
+
 export const PROOF_ATTRIBUTION =
   "Results reported by the CEO of a strategic communications firm, for their own work, after six months using the system.";
 
@@ -111,3 +113,23 @@ export const PARTNERS = {
     description: "builds ready-to-work AI agents for businesses",
   },
 } as const;
+
+// Search descriptions are built from the facts above so they cannot drift (spec §3).
+type DescribedOffer = {
+  priceUsd: number;
+  sessions: number;
+  sessionHours: number;
+  tools: readonly string[];
+};
+
+const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight"];
+const word = (n: number) => NUMBER_WORDS[n] ?? String(n);
+const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
+
+export function siteDescription(offer: DescribedOffer): string {
+  return `Build your own AI productivity system in ${word(offer.sessions)} weeks, live online, with SkWx builders. ${offer.tools.join(" and ")}, built around your real work.`;
+}
+
+export function intensiveDescription(offer: DescribedOffer): string {
+  return `A ${word(offer.sessions)}-week build intensive, live online: a discovery call plus ${word(offer.sessions)} ${word(offer.sessionHours)}-hour sessions with SkWx builders. Build your own Command Center with ${offer.tools.join(" and ")}. ${usd(offer.priceUsd)}.`;
+}

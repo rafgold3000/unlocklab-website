@@ -8,3 +8,7 @@ test("past workshops are the two confirmed events, newest first", () => {
   ]);
   expect(PAST_WORKSHOPS.every((w) => w.place.includes("26 Broadway"))).toBe(true);
 });
+
+test("hosts match what each event page lists, without overstating UnlockLab", () => {
+  expect(PAST_WORKSHOPS.map((w) => w.host)).toEqual(["SkWx and FidelicAI", "FidelicAI (Memetica Corporation)"]);
+});

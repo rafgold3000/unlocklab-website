@@ -23,6 +23,16 @@ export type ValidationResult =
   | { ok: true; data: Inquiry }
   | { ok: false; spam?: true; errors: Record<string, string> };
 
+// Deliberately meaningless name: autofill tools target fields like "website".
+export const HONEYPOT_FIELD = "hp_extra";
+
+// Same order as the fields appear on screen, so focus lands on the first problem.
+export const FIELD_ORDER = ["name", "email", "role", "industry", "experience", "goal"] as const;
+
+export function firstInvalidField(errors: Record<string, string>): string | undefined {
+  return FIELD_ORDER.find((field) => field in errors);
+}
+
 export const LIMITS = { name: 100, email: 254, role: 100, industry: 100, goal: 2000 } as const;
 
 // Deliberately simple: one @, no spaces, a dot in the domain.
@@ -39,7 +49,7 @@ export function validateInquiry(body: unknown): ValidationResult {
   const input = body as Record<string, unknown>;
 
   // Honeypot: people never see this field, so anything in it means a bot.
-  if (str(input.website)) return { ok: false, spam: true, errors: {} };
+  if (str(input[HONEYPOT_FIELD])) return { ok: false, spam: true, errors: {} };
 
   const name = str(input.name);
   const email = str(input.email);

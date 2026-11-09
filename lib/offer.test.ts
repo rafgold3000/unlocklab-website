@@ -49,3 +49,17 @@ test("organization JSON-LD names UnlockLab at the canonical URL", () => {
   expect([o["@type"], o.name, o.url]).toEqual(["Organization", "UnlockLab", "https://unlocklab.ai"]);
   expect(JSON.stringify(o)).not.toContain("address");
 });
+
+import { PROOF_HEADING, intensiveDescription, siteDescription } from "@/lib/offer";
+
+test("proof heading claims no more than the results show", () => {
+  expect(PROOF_HEADING).toBe("Hours of work, down to an hour or less");
+});
+
+test("search descriptions are built from offer facts", () => {
+  const changed = { ...OFFER, priceUsd: 1750, sessionHours: 3 };
+  expect(intensiveDescription(changed)).toContain("$1,750");
+  expect(intensiveDescription(changed)).toContain("three-hour");
+  expect(intensiveDescription(OFFER)).toContain("$1,500");
+  expect(siteDescription(OFFER)).toContain("four weeks");
+});

@@ -15,7 +15,7 @@ describe("validateInquiry", () => {
   });
 
   test("honeypot submissions are flagged as spam", () => {
-    expect(validateInquiry({ name: "Bot", email: "bot@example.com", website: "http://x" })).toEqual({
+    expect(validateInquiry({ name: "Bot", email: "bot@example.com", hp_extra: "http://x" })).toEqual({
       ok: false,
       spam: true,
       errors: {},
@@ -67,5 +67,21 @@ describe("formatInquiryEmail", () => {
     for (const v of ["Ada", "ada@example.com", "COO", "Logistics", "I use AI tools regularly", "Weekly board reports"]) {
       expect(text).toContain(v);
     }
+  });
+});
+
+import { FIELD_ORDER, HONEYPOT_FIELD, firstInvalidField } from "@/lib/inquiry";
+
+describe("review fixes", () => {
+  test("honeypot uses a meaningless name autofill won't target", () => {
+    expect(HONEYPOT_FIELD).toBe("hp_extra");
+    expect(validateInquiry({ name: "A", email: "a@example.com", website: "https://real.example" }).ok).toBe(true);
+    expect(validateInquiry({ name: "A", email: "a@example.com", [HONEYPOT_FIELD]: "x" })).toEqual({ ok: false, spam: true, errors: {} });
+  });
+
+  test("firstInvalidField follows on-screen field order", () => {
+    expect(FIELD_ORDER).toEqual(["name", "email", "role", "industry", "experience", "goal"]);
+    expect(firstInvalidField({ goal: "x", email: "y" })).toBe("email");
+    expect(firstInvalidField({})).toBeUndefined();
   });
 });

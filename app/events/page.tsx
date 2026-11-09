@@ -7,7 +7,7 @@ import { PAST_WORKSHOPS } from "@/lib/workshops";
 export const metadata: Metadata = {
   title: "Past workshops",
   description:
-    "In-person UnlockLab workshops in New York on Claude Code and building with AI, hosted with SkWx and FidelicAI.",
+    "In-person workshops in New York on Claude Code and building with AI that UnlockLab has been part of, hosted by SkWx and FidelicAI.",
   alternates: { canonical: "/events" },
 };
 
@@ -28,8 +28,8 @@ export default function PastWorkshopsPage() {
       <p className="eyebrow">UnlockLab</p>
       <h1 className="mt-3 text-4xl font-semibold sm:text-5xl">Past workshops</h1>
       <p className="mt-4 max-w-2xl text-lg text-muted">
-        In-person sessions we&apos;ve run in New York. New workshops will be listed here when
-        they&apos;re scheduled.
+        In-person workshops in New York that UnlockLab has been part of. New workshops will be
+        listed here when they&apos;re scheduled.
       </p>
 
       <ul className="mt-12 divide-y divide-rule border-y border-rule">

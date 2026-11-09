@@ -47,7 +47,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-semibold">UnlockLab</h2>
             <p className="mt-3 text-muted">
               A home for practical, hands-on AI capability for working professionals. UnlockLab has
-              run in-person workshops in New York on Claude Code and building with AI.
+              been part of in-person workshops in New York on Claude Code and building with AI.
             </p>
             <Link href="/events" className="mt-3 inline-block text-sm font-semibold text-violet">
               Past workshops →

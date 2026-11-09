@@ -17,7 +17,7 @@ export const PAST_WORKSHOPS: Workshop[] = [
     date: "2025-10-28",
     time: "9–11 AM",
     place: "26 Broadway, 3rd floor, New York",
-    host: "UnlockLab with SkWx and FidelicAI",
+    host: "SkWx and FidelicAI",
     summary:
       "A hands-on, two-hour Claude Code workshop for non-coders: setup, practical use cases and the future of knowledge work, over bagels and coffee.",
     url: "https://luma.com/00wvf46f",

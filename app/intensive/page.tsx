@@ -4,11 +4,11 @@ import InquiryForm from "@/components/InquiryForm";
 import JsonLd from "@/components/JsonLd";
 import { courseJsonLd } from "@/lib/jsonld";
 import Proof from "@/components/Proof";
-import { OFFER, PARTNERS } from "@/lib/offer";
+import { OFFER, PARTNERS, PROOF_HEADING, intensiveDescription } from "@/lib/offer";
 
 export const metadata: Metadata = {
   title: OFFER.name,
-  description: `A four-week build intensive, live online: a discovery call plus ${OFFER.sessions} two-hour sessions with SkWx builders. Build your own Command Center with Claude Code and Claude Cowork. $1,500.`,
+  description: intensiveDescription(OFFER),
   alternates: { canonical: "/intensive" },
 };
 
@@ -113,7 +113,7 @@ export default function IntensivePage() {
       <section className="section">
         <div className="container-page">
           <p className="eyebrow">What the architecture does</p>
-          <h2 className="mt-3 text-3xl font-semibold">Hours of work, down to minutes</h2>
+          <h2 className="mt-3 text-3xl font-semibold">{PROOF_HEADING}</h2>
           <div className="mt-6">
             <Proof
               intro={`These results come from the Command Center architecture ${PARTNERS.skwx.name} deploys for clients. In the intensive, you build your own version of it, around your own work.`}
