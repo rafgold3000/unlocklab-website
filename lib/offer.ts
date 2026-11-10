@@ -12,7 +12,7 @@ export const OFFER = {
   headline: "Build your personal productivity engine.",
   definition:
     "A personal productivity engine: your context, your voice, your design system, your workflows.",
-  lede: "Four weeks, live online, alongside the SkWx builders who deploy this system for clients. A partnership between UnlockLab and SkWx.",
+  lede: "Four weeks, live online, alongside the SkWx builders who deploy this system for clients.",
   priceUsd: 1500,
   sessions: 4,
   sessionHours: 2,

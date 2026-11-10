@@ -74,3 +74,8 @@ test("search descriptions are built from offer facts", () => {
   expect(intensiveDescription(OFFER)).toContain("$1,500");
   expect(siteDescription(OFFER)).toContain("four weeks");
 });
+
+test("site copy no longer describes a partnership", () => {
+  expect(OFFER.lede.toLowerCase()).not.toContain("partnership");
+  expect(JSON.stringify(organizationJsonLd()).toLowerCase()).not.toContain("partnership");
+});

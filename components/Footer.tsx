@@ -10,7 +10,7 @@ export default function Footer() {
           <Link href="/" className="font-serif text-xl font-semibold text-ink no-underline">
             UnlockLab
           </Link>
-          <p className="mt-2 text-sm text-muted">A partnership between UnlockLab and SkWx.</p>
+          <p className="mt-2 text-sm text-muted">Hands-on AI capability for working professionals.</p>
         </div>
         <ul className="space-y-2 text-sm">
           <li>

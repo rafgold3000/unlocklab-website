@@ -20,7 +20,7 @@ export function organizationJsonLd(): object {
   return {
     "@context": "https://schema.org",
     ...unlocklabOrg,
-    description: `UnlockLab runs ${OFFER.name} in partnership with SkWx, ${PARTNERS.skwx.description}.`,
+    description: `UnlockLab helps professionals build hands-on AI capability. It runs ${OFFER.name}.`,
   };
 }
 
