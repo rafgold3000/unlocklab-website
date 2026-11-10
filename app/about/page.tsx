@@ -16,7 +16,7 @@ export default function AboutPage() {
       <section className="container-page py-20 sm:py-24">
         <p className="eyebrow">About UnlockLab</p>
         <h1 className="mt-4 max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight">
-          Turn AI from a curiosity into a capability
+          From trying AI to unlocking all it can do
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted">
           UnlockLab is a hands-on learning lab for professionals who want to stay ahead of the
